@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class PickingNumbers_V2 {
+	 public static void main(String[] args) {
+	        Scanner in = new Scanner(System.in);
+	        int n = in.nextInt();
+	        int[] a = new int[n];
+	        int[] b = new int[n-1];
+	        ArrayList<Integer> list1 = new ArrayList<Integer>();
+	        ArrayList<Integer> differenceList = new ArrayList<Integer>();
+	        ArrayList<Integer> CSList = new ArrayList<Integer>();
+	        ArrayList<Integer> CNSList = new ArrayList<Integer>();
+	        for(int a_i=0; a_i < n; a_i++){
+	            a[a_i] = in.nextInt();
+	            list1.add(a[a_i]);
+	        }
+	        //int t = ;
+	       
+	        for(int a_i=0; a_i <list1.size(); a_i++){
+	       // 	 System.out.println("List1 Size:" + list1.size() );
+	        	 for(int b_i=0,b_j=0; b_i <list1.size(); b_i++){
+	        		
+	        		 if(a_i != b_i && list1.size()>0)
+	        		 {
+	        			 
+	        	// b[b_j] = (list1.get(a_i) - list1.get(b_i));
+	        		 
+	        	differenceList.add(Math.abs(list1.get(a_i) - list1.get(b_i)));
+	   
+	        	if(differenceList.get(b_j)>1)
+	        		{
+	        		CNSList.add(list1.get(b_i));
+	        		//list1.remove(list1.get(b_i));
+	        		list1.remove(list1.get(b_i));
+	        		
+	        		}
+	        		else
+	        		{
+	        			CSList.add(list1.get(b_i));
+	        		}
+	        	b_j++;
+	        		 }
+	        		 System.out.println("differenceList:" + differenceList); 
+	               	 System.out.println("Value left in List1 :" +list1);
+	               	 System.out.println("Value left in CSList :" +CSList);
+	               	 System.out.println("Value left in CNSList :" +CNSList);
+	   
+	        }
+	        	 
+	        }
+	        
+	       
+	       
+	        
+	       
+	    }
+	}
